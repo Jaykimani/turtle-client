@@ -1,0 +1,276 @@
+@media screen and (max-width: 600px) {
+    .check-out{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        background-image: url("/public/Assets/smoothie\ bg.png");
+        text-align: center;
+        z-index: 15;
+        padding: 10px 5px;
+        overflow-y: scroll;
+    }
+    .checkout-header{
+        display: flex;
+        padding: 0 10px;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+    .checkout-header h2{
+        font-family: 'Playfair Display', serif;
+        margin-bottom: 10px;
+    }
+    .order-item{
+        width: 100%;
+        height: 90px;
+        background-color: rgb(237, 237, 237);
+        display: flex;
+        border-radius: 8px;
+        margin-bottom: 5px;
+    }
+    .order-info{
+        width: 65%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        border-right: 1.5px solid black;
+        padding: 5px 7px;
+    }
+    .order-info h4{
+        -webkit-text-stroke: 1px black;
+    }
+    .order-detail{
+        width: 100%;
+        height: 45px;
+        margin-top: 7px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .detail{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .detail p{
+        font-size: 14px;
+    }
+    .order-detail span{
+        width: 1.5px;
+        height: 100%;
+        background: black;
+    }
+    .price{
+        width: 25%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-right: 1.5px solid black;
+        font-weight: 800;
+    }
+    .delete{
+        height: 100%;
+        width: 10%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(189, 189, 189);
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px; 
+    }
+    .total-price{
+        width: 100%;
+        height: 50px;
+        background-color: rgb(197, 197, 197);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        font-weight: 900;
+    }
+    .person-info{
+        width: 100%;
+        height: 200px;
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        background-color: white;
+        padding: 0 10px;
+    }
+    .person-info input{
+        height: 30px;
+        border: none;
+        border-bottom: 2px solid black;
+        background: transparent;
+        font-size: 17px;
+        padding-left: 7px;
+    }
+    .person-info input:focus{
+        border: none;
+        outline: none;
+        border-bottom: 2px solid black;
+    }
+    .place-order{
+        width: 100%;
+        padding: 20px 0;
+        margin-top: 10px;
+        border: none;
+        background-color: rgb(11, 255, 2);
+        font-size: 20px;
+    }
+    .clear-all{
+        width: 100%;
+        padding: 20px 0;
+        margin-top: 10px;
+        border: none;
+        background-color: rgb(255, 40, 2);
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .check-out{
+        position: absolute;
+        top: 2%;
+        right: 0;
+        width: 65%;
+        height: auto;
+        max-height: 95vh;
+        background-image: url("/public/Assets/smoothie\ bg.png");
+        text-align: center;
+        z-index: 7;
+        padding: 10px 10px;
+        border-radius: 10px;
+        overflow-y: scroll;
+    }
+    .checkout-header{
+        display: flex;
+        padding: 0 10px;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+    .checkout-header h2{
+        font-family: 'Playfair Display', serif;
+        margin-bottom: 10px;
+    }
+    .order-item{
+        width: 100%;
+        height: 130px;
+        background-color: rgb(237, 237, 237);
+        display: flex;
+        border-radius: 8px;
+        margin-bottom: 5px;
+        cursor: pointer;
+    }
+    .order-info{
+        width: 75%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        border-right: 1.5px solid black;
+        padding: 5px 7px;
+        align-items: center;
+    }
+    .order-info h4{
+        width: 85%;
+        -webkit-text-stroke: 1px black;
+        font-size: 23px;
+        border-bottom: 1px solid black;
+        padding-bottom: 10px;
+    }
+    .order-detail{
+        width: 100%;
+        height: 50px;
+        margin-top: 7px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .detail{
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center;
+    }
+    .detail p{
+        font-size: 16px;
+    }
+    .order-detail span{
+        width: 1.5px;
+        height: 100%;
+        background: black;
+    }
+    .price{
+        width: 25%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-right: 1.5px solid black;
+        font-weight: 800;
+    }
+    .delete{
+        height: 100%;
+        width: 10%;
+        font-size: 23px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(189, 189, 189);
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px; 
+    }
+    .total-price{
+        width: 100%;
+        height: 50px;
+        background-color: rgb(197, 197, 197);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        font-weight: 900;
+    }
+    .person-info{
+        width: 100%;
+        height: 200px;
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        background-color: white;
+        padding: 0 10px;
+    }
+    .person-info input{
+        height: 30px;
+        border: none;
+        border-bottom: 2px solid black;
+        background: transparent;
+        font-size: 17px;
+        padding-left: 7px;
+    }
+    .person-info input:focus{
+        border: none;
+        outline: none;
+        border-bottom: 2px solid black;
+    }
+    .place-order{
+        width: 100%;
+        padding: 20px 0;
+        margin-top: 10px;
+        border: none;
+        background-color: rgb(11, 255, 2);
+        font-size: 20px;
+    }
+    .clear-all{
+        width: 100%;
+        padding: 20px 0;
+        margin-top: 10px;
+        border: none;
+        background-color: rgb(255, 40, 2);
+        font-size: 20px;
+    }
+}

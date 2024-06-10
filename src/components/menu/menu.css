@@ -1,0 +1,121 @@
+@media screen and (max-width: 600px) {
+    .menu-div{
+        width: 100%;
+        height: auto;
+        text-align: center;
+        padding: 20px 0px;
+        background-image: url("/public/Assets/smoothie\ bg.png");
+    }
+    .menu-div h2{
+        font-family: 'Playfair Display', serif;
+    }
+    .menu-options{
+        width: 100%;
+        height: 100px;
+        background-color: rgba(255, 255, 255, 0.7);
+        margin: 10px 0;
+        padding: 0 15px;
+        display: flex;
+        align-items: center;
+        overflow-x: scroll;
+
+    }
+    .menu-options::-webkit-scrollbar-thumb {
+        color: black;
+        border-radius: 5px;               
+      }
+    .menu-options div{
+        width: 230px;
+        height: 60px;
+        border-right: 2px solid rgb(1, 203, 1);
+        display: flex;
+        align-items: center;
+        padding: 0 10px;
+        cursor: pointer;
+        
+    }
+    #last-div{
+        border-right: none;
+    }
+    .menu-options p{
+        padding: 10px 10px;
+        font-size: 15px;
+        cursor: pointer;
+    }
+    .active{
+        background: black;
+        color: white;
+        border-radius: 8px;
+    }
+    .menu-content{
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        /* overflow: scroll; */
+        background-color: rgba(255, 255, 255,0);
+        padding:0 10px 10px;
+    }
+  
+    
+}
+
+@media screen and (min-width: 600px) {
+    .menu-div{
+        width: 100%;
+        height: auto;
+        text-align: center;
+        padding: 20px 0px;
+        background-image: url("/public/Assets/smoothie\ bg.png");
+        box-shadow: 0px 3px 5px 6px black;
+       
+    }
+    .menu-div h2{
+        font-family: 'Playfair Display', serif;
+    }
+    .menu-options{
+        width: 100%;
+        height: 100px;
+        background-color: rgba(255, 255, 255, 0.7);
+        margin: 10px 0;
+        padding: 0 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .menu-options div{
+        width: 230px;
+        height: 60px;
+        border-right: 2px solid rgb(1, 203, 1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 10px;
+        cursor: pointer;   
+    }
+    .menu-options p{
+        padding: 10px 10px;
+        font-size: 20px;
+        font-family: 'Abel', sans-serif;
+        cursor: pointer;
+    }
+    #last-div{
+        border-right: none;
+    }
+    .active{
+        background: black;
+        color: white;
+        border-radius: 8px;
+    }
+    .menu-content{
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        /* overflow: scroll; */
+        background-color: rgba(255, 255, 255,0);
+        padding:0 30px 10px;
+    }
+}
