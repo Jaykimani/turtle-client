@@ -9,6 +9,8 @@ import AcUnitIcon from '@mui/icons-material/AcUnit';
 
 function Custom(){
   const {state, dispatch} = useContext(CountContext);
+  const [salad, setSalad] = useState(true);
+  const [smoothie, setSmoothie] = useState(false);
   const [customIngredients, setCustomIngredients] = useState([]);
   const [customIsClicked, setCustomIsClicked] = useState(false);
   const [customCheckout, setCustomCheckout] = useState({font : `'Protest Riot', sans-serif`, color: `#15ff00`, name: `${customIngredients?.[0]} SMOOTHIE`, ingredients: customIngredients, size: 0, price: 0, bottles: 0, temperature: '', comments: ''})
@@ -27,7 +29,14 @@ function Custom(){
   
    }, [customBottlesNum])
 
-
+const handleSalad = ()=>{
+     setSalad(true);
+     setSmoothie(false);
+}
+const handleSmoothie = ()=>{
+    setSalad(false);
+    setSmoothie(true);
+}
 const handleCustom = (e) => {
     let clickedItem = e.currentTarget;
     if(clickedItem.style.backgroundColor === "white"){
@@ -167,8 +176,28 @@ const handleCustomOrder = (e)=>{
     return(
         <>
         <div className="custom-div">
-        <div className="fruits-div">
-        <h2>Build Your Own Smoothie</h2>
+        
+        <h2>Build Your Own</h2>
+        <div className="custom-choice">
+          <div className={salad ? "custom-active" : "choice"} onClick={handleSalad}>
+            <p>FRUIT SALAD</p>
+          </div>
+          <div className={smoothie ? "custom-active" : "choice"} onClick={handleSmoothie}>
+            <p>SMOOTHIE</p>
+          </div>
+        </div>
+        <div className="fruits-div" style={{display : `${salad ? `block` : `none`}`}}>
+         <p className="fruits-heading">Pick your fruits</p>
+         <div className="fruits-list">
+          {state.saladItems.map((item)=>{
+            return   <div className="salad-item" style={{backgroundColor: "white"}} onClick={handleCustom}>
+            <p className="word">{item}</p>
+          </div>
+          })}
+          
+         </div>
+        </div> 
+        <div className="fruits-div" style={{display : `${smoothie ? `block` : `none`}`}}>
          <p className="fruits-heading">Pick your fruits</p>
          <div className="fruits-list">
           {state.fruits.map((item)=>{
@@ -179,7 +208,7 @@ const handleCustomOrder = (e)=>{
           
          </div>
         </div>  
-         <div className="veggies-div">
+         <div className="veggies-div" style={{display : `${smoothie ? `block` : `none`}`}}>
          <p className="fruits-heading">Kick up the nutrition</p>
           <div className="fruits-list">
           {state.veggies.map((item)=>{
@@ -189,7 +218,7 @@ const handleCustomOrder = (e)=>{
           })}
           </div>
          </div>
-         <div className="base-div">
+         <div className="base-div" style={{display : `${smoothie ? `block` : `none`}`}}>
          <p className="fruits-heading">Add a base</p>
           <div className="fruits-list">
           {state.bases.map((item)=>{
@@ -199,7 +228,7 @@ const handleCustomOrder = (e)=>{
           })}
           </div>
          </div>
-         <div className="addins-div">
+         <div className="addins-div" style={{display : `${smoothie ? `block` : `none`}`}}>
          <p className="fruits-heading">Throw some add ins</p>
           <div className="fruits-list">
           {state.addins.map((item)=>{
@@ -210,14 +239,14 @@ const handleCustomOrder = (e)=>{
           </div>
          </div>
 
-         <button className="checkout" onClick={handleCheckout}>CHECKOUT</button>
+         <button className="checkout" onClick={handleCheckout}>VIEW ORDER</button>
         </div>
 
 
         <div id="custom-info" style={{display :`${customIsClicked ? `block` : `none`}`}}>
            <div className="custom-info">
            <CancelIcon fontSize="large" className="cancelIcon" onClick={handleCustomExit}/>
-           <h1>{customIngredients?.[0]} SMOOTHIE</h1>
+           <h1>{smoothie ? `${customIngredients?.[0]} SMOOTHIE` : `FRUIT SALAD`}</h1>
             <div className="custom-info-1">
               <div className="custom-content">
                 {customIngredients?.map((item) => {
@@ -226,7 +255,8 @@ const handleCustomOrder = (e)=>{
                 
               </div>
         <div className="custom-info-2">
-        <div className="custom-pricing">
+        <div className="custom-pricing" style={{display : `${smoothie ? `block` : `none`}`}}>
+        <div className="custom-pricing-div">
         <div style={{backgroundColor: halfMl ? "#CDCDCD" : "#15ff00"}} onClick={handleHalf}>
           <h4><span id="size">500</span>ml</h4>
           <p>Ksh <span id="price">250.00</span></p>
@@ -239,7 +269,7 @@ const handleCustomOrder = (e)=>{
           <h4><span id="size">1000</span>ml</h4>
           <p>Ksh <span id="price">450.00</span></p>
         </div>
-        
+        </div>
        </div>
        <div className="custom-temperature">
       
@@ -261,7 +291,7 @@ const handleCustomOrder = (e)=>{
          <span>{customBottlesNum}</span>
          <span onClick={handleCustomIncrease}>+</span>
       </div>
-     <button type="submit" style={{backgroundColor: doneBG ? "#CDCDCD" : "#ff0062"}} onClick={handleCustomOrder}>{doneBG ? "DONE!!" : "CHECKOUT"}</button>
+     <button type="submit" style={{backgroundColor: doneBG ? "#CDCDCD" : "#ff0062"}} onClick={handleCustomOrder}>{doneBG ? "DONE!!" : "ADD TO CART"}</button>
       </div> 
       <div className="custom-exit" onClick={handleCustomExit}>
          <p>EXIT</p>

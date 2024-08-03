@@ -26,6 +26,11 @@ export const Reducer = (state, action) => {
             return {
                 ...state,
                 addins: action.payload
+            }
+        case "add-saladItems":
+            return {
+                ...state,
+                saladItems : action.payload
             }             
         case "edit-smoothieOrders":
             return {

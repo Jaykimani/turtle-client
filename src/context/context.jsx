@@ -7,6 +7,7 @@ const defaultState = {
     veggies: [],
     bases: [],
     addins: [],
+    saladItems: [],
     smoothieOrders : [],
     orderType: [],
     openCheckout : false

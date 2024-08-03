@@ -1,0 +1,94 @@
+@media screen and (min-width: 600px) {
+    .about-div{
+        width: 100%;
+        height: auto;
+        background: url("/public/Assets/itemsbg.jpg");
+        padding: 0;
+    }
+    .about-info{
+        width: 95%;
+        height: auto;
+        margin: 25px auto;
+        padding: 10px 0 15px;
+        background-color: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+    }
+    .about-details{
+        width: 90%;
+        height: auto;
+        margin: 40px auto 0;
+        text-align: center;
+        line-height: 35px;
+    }
+    .about-info h2{
+        font-family: 'Protest Riot', sans-serif;
+        margin-top: 20px;
+        text-align: center;
+        font-size: 25px;
+    }
+    .about-details p{
+        font-family: 'Abel', sans-serif;
+        font-size: 21px;
+        margin: 10px 0 20px;
+    }
+    .big-name{
+        font-family: 'Protest Riot', sans-serif;
+        color: rgb(17, 255, 0);
+        -webkit-text-stroke: 0.5px black;
+    }
+    .obsessed{
+        text-align: left;
+    }
+    .obsessed span{
+        font-family: 'Protest Riot', sans-serif;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .about-div{
+        width: 100%;
+        height: auto;
+        background: url("/public/Assets/itemsbg.jpg");
+        background-size: cover;
+        padding: 0;
+    }
+    .about-info{
+        width: 95%;
+        height: auto;
+        margin: 0 auto;
+        padding: 10px 0 15px;
+        /* background-color: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px); */
+        border-radius: 20px;
+    }
+    .about-details{
+        width: 95%;
+        height: auto;
+        margin: 40px auto 0;
+        text-align: center;
+        line-height: 25px;
+    }
+    .about-info h2{
+        font-family: 'Protest Riot', sans-serif;
+        margin-top: 20px;
+        text-align: center;
+        font-size: 20px;
+    }
+    .about-details p{
+        font-family: 'Abel', sans-serif;
+        font-size: 17px;
+        margin: 10px 0 20px;
+    }
+    .big-name{
+        font-family: 'Protest Riot', sans-serif;
+        color: rgb(17, 255, 0);
+        -webkit-text-stroke: 0.5px black;
+    }
+    .obsessed{
+        text-align: left;
+    }
+    .obsessed span{
+        font-family: 'Protest Riot', sans-serif;
+    }
+}

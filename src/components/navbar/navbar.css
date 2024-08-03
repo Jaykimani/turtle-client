@@ -13,8 +13,31 @@
         align-items: center;
         background: url("/public/Assets/itemsbg.jpg");
         background-size: cover;
-        
         z-index: 10;
+    }
+    .navbar-mob-options{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 80%;
+        height: auto;
+        padding: 40px 10px 20px;
+        background-color: rgb(0, 0, 0);
+        z-index: 50;
+    }
+    .cancelIcon-options{
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 20;
+        color: white;
+    }
+    .navbar-mob-options h2{
+        text-align: center;
+        font-family: 'Abel', sans-serif;
+        padding: 10px 0;
+        margin: 30px 0;
+        color: white;
     }
     .navbar-png{
         position: absolute;
@@ -56,6 +79,7 @@
     .brand-name svg{
         width: 100%;
         height: auto;
+        margin-top: 7px;
     }
     .brand-name h2{
         text-align: center;

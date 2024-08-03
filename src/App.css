@@ -9,118 +9,62 @@
       -ms-user-select: none; /* Internet Explorer/Edge */
           user-select: none;
 }
-.landing-desktop{
-  display: none;
+.preloader{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000000;
+  z-index: 100;
+  display: block;
 }
-  .landing-div {
-    position: relative;
-    display: block;    
-    width: 100%;
-    height: 750px;
-    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("/public/Assets/landing-bg1.jpg");
-    background-size: cover;
-  }
-  .landing-content{
-    position: relative;
-    width: 93%;
-    margin: 30px auto 0;
-    text-align: center;
-    font-family: 'Henny Penny', system-ui;
-    font-size: 38px;
-    z-index: 3;
-    text-shadow: 2px 2px rgb(0, 0, 0);
-    color: #00ff1a;
-  }
-  .landing-png{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 350px;
-    z-index: 0;
-   
-  }
-  .landing-png svg{
-    width: 100%;
-    height: auto;
+.logo-div{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   
-  }
-  #svg{
-    filter: drop-shadow(3px 3px 3px black);
-  }
-  .turtle-content{
-    position: absolute;
-    bottom: 3%;
-    left: 0;
-    padding: 10px 20px;
-    border-radius: 8px;
-    color: rgb(255, 255, 255);
-    font-family: "Amatic SC", sans-serif;
-    font-size: 22px;
-    text-align: center;
-  }
-  .turtle-content span{
-    color: rgb(8, 255, 8);
-    font-size: 20px;
-    -webkit-text-stroke: 0.2px black;
-  }
+}
+.logo{
+  width: 250px;
+  height: 250px;
+  transform: translateY(-50px);
+}
+.logo svg{
+  width: 100%;
+  height: auto;
+}
 
 }
 
 @media screen and (min-width: 600px) {
-  .landing-div{
-     display: none;
-  }
-  .landing-desktop{
-    display: block;
-    position: relative;
-    width: 100%;
-    height: 135vh;
-    background: linear-gradient(to right, rgba(255, 225, 0, 0.1), rgba(255, 225, 0, 0.1)), url("/public/Assets/smoothie\ bg.png");
-    background-size: cover;
-    /* background-color: rgba(1, 158, 255, 0.724); */
-    box-shadow: inset 0 -7px 15px -7px rgba(0,0,0,0.8);
-  }
-  .desktop-img{
-    position: absolute;
-    top: 0;
+  .preloader{
+    position: fixed;
     left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000000;
+    z-index: 100;
+    display: block;
+  }
+  .logo-div{
     width: 100%;
-    height: 600px;
-    filter: drop-shadow(3px 3px 5px black);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
   }
-  
-  .landing-content-1{
-    position: absolute;
-    top: 15%;
-    left: 50%;
-    width: 70%;
-    height: 200px;
-    transform: translateX(-50%);
-    text-align: center;
+  .logo{
+    width: 350px;
+    height: 350px;
   }
-  .landing-content-1 p{
-    font-family: 'Henny Penny', system-ui;
-    font-size: 65px;
-    color: rgb(255, 255, 255);
-    text-shadow: 4px 2px rgb(0, 21, 255);
-  }
-  .turtle-content-1{
-    position: absolute;
-    bottom: 5%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 70%;
+  .logo svg{
+    width: 100%;
     height: auto;
-    font-size: 27px;
-    font-family: "Amatic SC", sans-serif;
-  font-weight: 700;
-  }
-  .turtle-content-1 span{
-    color: rgb(8, 255, 8);
-    font-size: 30px;
-    -webkit-text-stroke: 0.2px black;
-
   }
 }
 

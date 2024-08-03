@@ -13,6 +13,7 @@ function CheckOut(){
    const [name, setName] = useState("");
    const [phone, setPhone] = useState("");
    const [delivery, setDelivery] = useState("");
+   const [confirmed, setConfirmed] = useState(false);
 
    const username = useRef();
    const phoneNumber = useRef();
@@ -74,24 +75,32 @@ function CheckOut(){
 
    
    const handlePlaceOrder = async() => {
+    setConfirmed(true);
 
-     const fullOrderObj = {
-          name: name,
-          phone_no: phone,
-          location: delivery,
-          order_types: state.orderType,
-          smoothie_orders: state.smoothieOrders,
-          total_cost: totalPrice,
-          order_date: date,
-          order_time: time
-     };
+    setTimeout(() => {
+      setConfirmed(false);
+      handleClearAll();
+      dispatch({type : "close-checkout"})
+    }, 10000);
+
+    //  const fullOrderObj = {
+    //       name: name,
+    //       phone_no: phone,
+    //       location: delivery,
+    //       order_types: state.orderType,
+    //       smoothie_orders: state.smoothieOrders,
+    //       total_cost: totalPrice,
+    //       order_date: date,
+    //       order_time: time
+    //  };
    
      
-     try {
-      await axiosInstance.post("/orders", fullOrderObj);
-     } catch (error) {
-      console.log(error);
-     }
+    //  try {
+    //   await axiosInstance.post("/orders", fullOrderObj);
+      
+    //  } catch (error) {
+    //   console.log(error);
+    //  }
      
    }
 
@@ -107,7 +116,7 @@ function CheckOut(){
 
 
 
-    return (
+    return ( <>
         <div className="check-out" style={{display: state.openCheckout ? "block" : "none"}}>
           <div className="checkout-header">
           <h2>CHECKOUT</h2>
@@ -160,6 +169,27 @@ function CheckOut(){
          <button className="place-order" onClick={handlePlaceOrder}>PLACE ORDER</button>
          <button className="clear-all" onClick={handleClearAll}>CLEAR ALL</button>
         </div>
+
+        <div className="order-confirmed" style={{display: confirmed ? "block" : "none"}}>
+          <div className="confirm-div">
+          <div className="confirm-info">
+            <div className="quotation">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+            </div>
+            <span className="top"></span>
+            <span className="right"></span>
+            <span className="bottom"></span>
+            <span className="left"></span>
+            <p>Thanks for ordering with us! <br/>Your healthy treat is being prepared. We’ll send you a text once the order is on the move.</p>
+            <p className="confirm-content">Enjoy the healthy goodness!!!</p>
+            <div className="quotation-2">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+            </div>
+          </div>
+          </div>
+          
+        </div>
+        </>   
     )
 }
 

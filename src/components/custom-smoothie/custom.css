@@ -2,19 +2,48 @@
     .custom-div{
         width: 100%;
         height: auto;
-        background-image: url("/public/Assets/smoothie\ bg.png");
-        padding-bottom: 10px;
+        background: url("/public/Assets/itemsbg.jpg");
+        background-size: contain;
+        padding: 15px 0;
+        box-shadow: inset 0 7px 15px -7px rgba(0,0,0,0.8);
+
+    }
+    .custom-choice{
+        width: 90%;
+        height: auto;
+        margin: 20px auto 30px;
+        display: flex;
+        justify-content: space-around;
+        cursor: pointer;
+    }
+    .choice{
+        padding: 10px 10px;
+        border: 1.5px solid black;
+        font-weight: 500;
+        font-size: 17px;
+        color: rgb(0, 0, 0);
+        border-radius: 7px;
+    }
+    .custom-active{
+        padding: 10px 10px;
+        border: 1.5px solid black;
+        font-weight: 500;
+        font-size: 17px;
+        background-color: black;
+        color: rgb(255, 255, 255);
+        border-radius: 7px; 
     }
     .fruits-div{
         width: 100%;
         height: auto;
-        background-color: rgba(255, 199, 0, 0.7);
+        background-color: rgba(255, 199, 0, 0.9);
         text-align: center;
         padding: 20px 15px 10px;
     }
-    .fruits-div h2{
+    .custom-div h2{
         font-family: 'Playfair Display', serif;
         margin-bottom: 15px;
+        text-align: center;
     }
     .fruits-heading{
         font-family: 'Abel', sans-serif;
@@ -27,6 +56,14 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+    }
+    .salad-item{
+        width: 45%;
+        background-color: white;
+        padding: 14px;
+        margin-bottom: 8px;
+        border-radius: 8px;
+        font-family: 'Protest Riot', sans-serif;
     }
     .fruit-item{
         width: 45%;
@@ -58,22 +95,24 @@
     .checkout{
         width: 100%;
         height: 50px;
-        background-color: rgb(255, 214, 0);
+        background-color: rgb(0, 0, 0);
+        color: white;
         border: none;
         margin: 15px auto 0;
     }
     #custom-info{
         position: fixed;
         width: 95%;
-        height: 93vh;
-        top: 20px;
+        height: auto;
+        max-height: 95vh;
+        top: 8%;
         left: 50%;
         transform: translateX(-50%);
         border-radius: 20px;
         background-image: url("/public/Assets/smoothie\ bg.png");
-        z-index: 5;
-        border: 2px solid black;
+        z-index: 20;
         cursor: pointer;  
+        overflow-y: scroll;
     }
     .custom-info{
         position: relative;
@@ -81,7 +120,7 @@
         height: 100%;
         display: flex;
         flex-direction: column;
-        padding: 15px 5px 10px;
+        padding: 15px 8px 10px;
         text-align: center;
     }
     .cancelIcon{
@@ -126,15 +165,19 @@
     .custom-pricing{
         width: 100%;
         height: auto;
-        display: flex;
-        justify-content: space-between;
         
     }
-    .custom-pricing div{
+    .custom-pricing-div{
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: space-between;
+    }
+    .custom-pricing-div div{
         padding: 15px 10px;
         border-radius: 10px;
     }
-    .custom-pricing div h4{
+    .custom-pricing-div div h4{
         margin-bottom: 10px;
     }
     .custom-temperature{
@@ -217,28 +260,66 @@
     .custom-div{
         width: 100%;
         height: auto;
-        background-image: url("/public/Assets/smoothie\ bg.png");
-        padding-bottom: 10px;
+        background: url("/public/Assets/itemsbg.jpg");
+        background-size: cover;
+        padding: 20px 0;
         display: flex;
         flex-direction: column;
         justify-content: center;
+        box-shadow: inset 0 7px 15px -7px rgba(0,0,0,0.8);
+
     }
     .fruits-div{
         width: 100%;
         height: auto;
-        background-color: rgba(255, 199, 0, 0.7);
+        background-color: rgba(255, 213, 59, 0.9);
         text-align: center;
         padding: 20px 15px 10px;
-        box-shadow: inset 0 7px 15px -7px rgba(0,0,0,0.8);
     }
-    .fruits-div h2{
+    .custom-div h2{
         font-family: 'Playfair Display', serif;
         margin-bottom: 15px;
         font-size: 26px;
+        text-decoration: underline;
+        text-align: center;
+    }
+    .custom-choice{
+        width: 40%;
+        height: auto;
+        margin: 20px auto 30px;
+        display: flex;
+        justify-content: space-around;
+        cursor: pointer;
+    }
+    .choice{
+        padding: 20px 20px;
+        border: 2px solid black;
+        font-weight: 600;
+        font-size: 20px;
+        color: rgb(0, 0, 0);
+        border-radius: 10px;
+    }
+    .custom-active{
+        padding: 20px 20px;
+        border: 2px solid black;
+        font-weight: 600;
+        font-size: 20px;
+        background-color: black;
+        color: rgb(255, 255, 255);
+        border-radius: 10px; 
+    }
+    .salad-item{
+        width: 30%;
+        background-color: white;
+        padding: 15px;
+        margin-bottom: 16px;
+        border-radius: 8px;
+        font-size: 20px;
+        font-family: 'Protest Riot', sans-serif;
+        cursor: pointer;
     }
     .fruits-heading{
         font-family: 'Abel', sans-serif;
-        text-decoration: underline;
         font-size: 20px;
     }
     .fruits-list{
@@ -260,26 +341,28 @@
     }
     .veggies-div{
         text-align: center;
-        background-color: rgba(0, 180, 18, 0.7);
+        background-color: rgba(0, 180, 18, 0.9);
         padding: 20px 15px 10px;
         margin-top: 5px;
     }
     .base-div{
         text-align: center;
-        background-color: rgba(153, 56, 56, 0.7);
+        background-color: rgba(153, 56, 56, 0.9);
         padding: 20px 15px 10px;
         margin-top: 5px;
     }
     .addins-div{
         text-align: center;
-        background-color: rgba(219, 86, 253, 0.7);
+        background-color: rgba(219, 86, 253, 0.9);
         padding: 20px 15px 10px;
         margin-top: 5px;
     }
     .checkout{
         width: 80%;
         height: 50px;
-        background-color: rgb(255, 214, 0);
+        background-color: rgb(0, 0, 0);
+        color: white;
+        font-size: 20px;
         border: none;
         border-radius: 10px;
         margin: 15px auto 0;
@@ -350,15 +433,19 @@
     .custom-pricing{
         width: 100%;
         height: auto;
-        display: flex;
-        justify-content: space-between;
         
     }
-    .custom-pricing div{
+    .custom-pricing-div{
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: space-between;
+    }
+    .custom-pricing-div div{
         padding: 20px 30px;
         border-radius: 10px;
     }
-    .custom-pricing div h4{
+    .custom-pricing-div div h4{
         margin-bottom: 10px;
     }
     .custom-temperature{

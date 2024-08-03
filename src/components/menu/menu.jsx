@@ -7,41 +7,27 @@ import { CountContext } from "../../context/context";
 function Menu (){
   const {state} = useContext(CountContext);
    const [displayContent, setDisplayContent] = useState ([]);
-   const [allClicked, setAllClicked] = useState (true);
-   const [energyClicked, setEnergyClicked] = useState (false);
+   const [energyClicked, setEnergyClicked] = useState (true);
    const [skinClicked, setSkinClicked] = useState (false);
    const [weightClicked, setWeightClicked] = useState (false);
    const [inflammatoryClicked, setInflammatoryClicked] = useState (false);
    const [postworkoutClicked, setPostworkout]= useState (false);
    const [detoxClicked, setDetoxClicked] = useState (false);
+   
 
    useEffect(() => {
 
-    let allSmoothies = state.all?.filter((item)=>{
-       return item.type === 'All smoothies';
+    let energySmoothies = state.all?.filter((item)=>{
+       return item.type === 'Energy-boost smoothie';
     });
 
-    setDisplayContent(allSmoothies);
+    setDisplayContent(energySmoothies);
    }, [state]);
 
 
-   const handleAllSmoothies = () => {
-      setAllClicked(true);
-      setEnergyClicked(false);
-      setDetoxClicked(false);
-      setSkinClicked(false);
-      setWeightClicked(false);
-      setInflammatoryClicked(false);
-      setPostworkout(false)
-    let display = state.all?.filter((item)=>{
-      return item.type === 'All smoothies';
-   });
 
-   setDisplayContent(display);
-   };
    
    const handleEnergyboost = () => {
-    setAllClicked(false);
       setEnergyClicked(true);
       setDetoxClicked(false);
       setSkinClicked(false);
@@ -56,7 +42,6 @@ function Menu (){
    };
 
    const handleDetox =  () => {
-    setAllClicked(false);
     setEnergyClicked(false);
     setDetoxClicked(true);
     setSkinClicked(false);
@@ -73,7 +58,6 @@ function Menu (){
    }
 
    const handleSkincare = () => {
-    setAllClicked(false);
       setEnergyClicked(false);
       setDetoxClicked(false);
       setSkinClicked(true);
@@ -88,7 +72,6 @@ function Menu (){
    };
 
    const handleWeightloss = () => {
-    setAllClicked(false);
       setEnergyClicked(false);
       setDetoxClicked(false);
       setSkinClicked(false);
@@ -100,11 +83,10 @@ function Menu (){
    });
 
    setDisplayContent(display);
-   };
+   }
 
 
    const handleAntiinflammatory = () => {
-    setAllClicked(false);
       setEnergyClicked(false);
       setDetoxClicked(false);
       setSkinClicked(false);
@@ -119,7 +101,6 @@ function Menu (){
    };
 
    const handlePostworkout = () => {
-    setAllClicked(false);
       setEnergyClicked(false);
       setDetoxClicked(false);
       setSkinClicked(false);
@@ -137,28 +118,25 @@ function Menu (){
   
   return (
     <div className="menu-div">
-       <h2>Our Menu</h2>
+       <h2>Our Smoothie Menu</h2>
        <div className="menu-options">
-        <div onClick={handleAllSmoothies}>
-        <p className={allClicked ? "active" : null}>All <br></br>Smoothies</p>
-        </div>
-        <div onClick={handleEnergyboost}>
-        <p className={energyClicked ? "active" : null}>Energy Boost</p>
+          <div onClick={handleEnergyboost}>
+        <p className={energyClicked ? "active" : null} style={{width: "100px"}}>Fun Tasty<br></br>Energy</p>
         </div>
         <div onClick={handleDetox}>
         <p className={detoxClicked ? "active" : null}>Detox Cleanse</p>
         </div>
+        <div onClick={handleWeightloss}>
+        <p className={weightClicked ? "active" : null}>Weight<br></br>Management</p>
+        </div>
         <div onClick={handleSkincare}>
         <p className={skinClicked ? "active" : null} style={{padding: "10px 20px"}}>Skin Care</p>
         </div>
-        <div onClick={handleWeightloss}>
-        <p className={weightClicked ? "active" : null}>Weight Management</p>
-        </div>
-        <div onClick={handleAntiinflammatory}>
-        <p className={inflammatoryClicked ? "active" : null}>Anti-inflammatory</p>
-        </div>
-        <div id="last-div" onClick={handlePostworkout}>
+        <div onClick={handlePostworkout}>
         <p className={postworkoutClicked ? "active" : null}>Post-Workout</p>
+        </div>
+        <div id="last-div" onClick={handleAntiinflammatory}>
+        <p className={inflammatoryClicked ? "active" : null}>Wellness Shots</p>
         </div>
        </div>
        <div id="allList" className="menu-content">
